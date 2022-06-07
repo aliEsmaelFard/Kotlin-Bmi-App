@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="image_radio_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:backgroundTint">@color/light_ebony</item>
+        <item name="iconPosition">top</item>
+        <item name="iconSize">80dp</item>
+        <item name="selectedBackgroundColor">@color/white</item>
+        <item name="selectedIconColor">#EC407A</item>
+        <item name="selectedTextColor">#EC407A</item>
+        <item name="textSize">9dp</item>
+        <item name="textColor">@color/text_color</item>
+        <item name="cardCornerRadius">10dp</item>
+    </style>
+
+    <style name="default_textview">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="fontFamily">@font/bdaznnbd</item>
+    </style>
+
+    <style name="text_linear_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="number_textview">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:fontFamily">@font/oswald</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">45sp</item>
+    </style>
+
+    <style name="parameter_textview">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">11dp</item>
+        <item name="android:fontFamily">@font/oswald</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+    </style>
+
+    <style name="weight_layout">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:background">@drawable/layout_background</item>
+    </style>
+
+    <style name="add_button">
+        <item name="android:layout_width">47dp</item>
+        <item name="android:layout_height">47dp</item>
+        <item name="android:background">@drawable/circle_shape</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="minus_button">
+        <item name="android:layout_width">47dp</item>
+        <item name="android:layout_height">47dp</item>
+        <item name="android:background">@drawable/circle_shape</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="toolbar_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">@color/ebony</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical|right</item>
+    </style>
+
+    <style name="toolbar_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">28sp</item>
+        <item name="fontFamily">@font/bdaznnbd</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="calculate_button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">@color/pink</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="scrollbar">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:paddingBottom">10dp</item>
+    </style>
+
+    <style name="top_result_text_view">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textSize">24sp</item>
+        <item name="fontFamily">@font/bdaznnbd</item>
+
+    </style>
+
+    <style name="bottom_result_textview">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">29sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="fontFamily">@font/oswald</item>
+
+    </style>
+
+
+</resources>
