@@ -49,6 +49,4 @@ dependencies {
     //seek bar
     implementation 'com.github.warkiz.widget:indicatorseekbar:2.1.2'
 
-    //TextView-LinkBuilder
-    implementation 'com.klinkerapps:link_builder:2.0.5'
 }
