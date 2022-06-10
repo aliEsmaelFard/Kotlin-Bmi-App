@@ -22,7 +22,15 @@
             android:gravity="center_vertical|right">
             <TextView
                 android:id="@+id/toolbar_tv"
-                style="@style/toolbar_text" />
+                style="@style/toolbar_text"
+                android:text="bmi"/>
+
+            <TextView
+                android:id="@+id/toolbar2_tv"
+                style="@style/toolbar_text"
+                android:layout_marginRight="8dp"
+                android:text="چیست؟"/>
+
         </LinearLayout>
 
     </androidx.appcompat.widget.Toolbar>

@@ -17,9 +17,6 @@ class MoreInfoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_more_info)
 
-        val textViewTitle = findViewById<TextView>(R.id.toolbar_tv)
-        textViewTitle.text = " جیست؟ " + "BMI"
-
         progressBar = findViewById(R.id.progressBar)
 
         val webView = findViewById<WebView>(R.id.web_view)
