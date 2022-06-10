@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">KotlinCalculaterApp</string>
+    <string name="app_name">BMI</string>
     <string name="notice">این شاخص برای افراد زیر 18 سال مناسب نیست.</string>
     <string name="link">  اطلاعات بیشتر  </string>
 </resources>
