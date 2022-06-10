@@ -44,7 +44,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingBottom="100dp">
 
             <androidx.constraintlayout.widget.Guideline
                 android:layout_width="wrap_content"
@@ -56,11 +57,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="35dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/layout_background"
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
-                android:layout_marginBottom="20dp"
                 app:layout_constraintTop_toTopOf="parent">
 
 
@@ -100,6 +100,7 @@
                 <TextView
                     style="@style/top_result_text_view"
                     android:text="وضعیت :"
+                    android:layout_marginTop="5dp"
                      />
 
                 <TextView
@@ -130,17 +131,52 @@
                     android:text="55 تا 86 کیلوگرم"
                     style="@style/bottom_result_textview" />
 
-                <TextView
-                    style="@style/top_result_text_view"
-                    android:layout_marginTop="20dp"
-                    android:text=" مناسب برای سن شما"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center|center_horizontal">
+
+                    <TextView
+                        style="@style/top_result_text_view"
+                        android:layout_marginTop="0dp"
+                        android:text=" مناسب سن شما :"/>
+
+                    <TextView
+                        style="@style/top_result_text_view"
+                        android:layout_marginTop="0dp"
+                        android:text="bmi"
+                        android:textSize="19sp"
+                        android:layout_marginLeft="2dp"/>
+
+
+                </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="-3dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center|center_horizontal">
 
 
                 <TextView
                     android:id="@+id/age_range_tv"
                     android:text="26"
                     style="@style/bottom_result_textview"
-                    android:layout_marginBottom="10dp"/>
+                    android:layout_marginTop="0dp"     />
+
+                <TextView
+                    android:text=" cm/m2"
+                    android:textSize="16sp"
+                    style="@style/bottom_result_textview"
+                    android:layout_marginTop="4dp"     />
+            </LinearLayout>
+
+
 
                 <LinearLayout
                     android:id="@+id/link_linear"
