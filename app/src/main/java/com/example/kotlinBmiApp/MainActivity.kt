@@ -1,6 +1,7 @@
 package com.example.kotlinBmiApp
 
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -50,6 +51,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener
     lateinit var layoutNotice: LinearLayout
     lateinit var buttonCalculate: TextView
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -67,7 +69,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener
                 isChecked: Boolean,
                 checkedId: Int
             ) {
-
+                manageSound(R.raw.radio_sound)
                 if (R.id.male == checkedId)
                     isMale = true
             }
@@ -77,7 +79,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener
         seekBar.onSeekChangeListener = object : OnSeekChangeListener {
             override fun onSeeking(seekParams: SeekParams) {
                 textViewHeight.text = seekParams.progress.toString()
-
+                manageSound(R.raw.sound6)
             }
 
             override fun onStartTrackingTouch(seekBar: IndicatorSeekBar?) {
@@ -96,10 +98,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener
         onLongPress(imageViewAgeAdd, INCREASE_AGE)
         onLongPress(imageViewAgeMinus, DECREASE_AGE)
 
-
     }
 
-    private fun onLongPress(view: View, str : String)
+    private fun onLongPress(view: View, str: String)
     {
         view.setOnLongClickListener {
             val handler = Handler(Looper.myLooper()!!)
@@ -113,15 +114,15 @@ class MainActivity : AppCompatActivity() , View.OnClickListener
                        {
                            INCREASE_WEIGHT -> increaseWeight()
                            DECREASE_WEIGHT -> decreaseWeight()
-                           INCREASE_AGE    -> increaseAge()
-                           DECREASE_AGE    -> decreaseAge()
-                       }
+                           INCREASE_AGE -> increaseAge()
+                           DECREASE_AGE -> decreaseAge()
 
+                       }
                         handler.postDelayed(this, 40)
                     }
                 }
             }
-            handler.postDelayed(runnable,0)
+            handler.postDelayed(runnable, 0)
             true
         }
 
@@ -130,32 +131,40 @@ class MainActivity : AppCompatActivity() , View.OnClickListener
     private fun increaseWeight()
     {
         if(weight < 130)
+        {
             weight++
-        textViewWeight.text = weight.toString()
+            textViewWeight.text = weight.toString()
+           manageSound(R.raw.sound5)
+        }
     }
 
     private fun decreaseWeight()
     {
-        if(weight > 30)
+        if(weight > 30) {
             weight--
-        textViewWeight.text = weight.toString()
+            manageSound(R.raw.sound5)
+            textViewWeight.text = weight.toString()
+        }
     }
 
 
     private fun increaseAge()
     {
         layoutNotice.visibility = View.INVISIBLE
-        if(age < 100)
+        if(age < 100) {
             age++
-        textViewAge.text = age.toString()
+            textViewAge.text = age.toString()
+            manageSound(R.raw.sound5)
+        }
     }
 
     private fun decreaseAge()
     {
-        if(age > 18)
+        if(age > 18) {
             age--
-        textViewAge.text = age.toString()
-
+            textViewAge.text = age.toString()
+            manageSound(R.raw.sound5)
+        }
         if (age == 18)
             layoutNotice.visibility = View.VISIBLE
         else
@@ -166,12 +175,12 @@ class MainActivity : AppCompatActivity() , View.OnClickListener
     override fun onClick(v: View?) {
         when (v?.id)
         {
-            R.id.weight_add       -> increaseWeight()
-            R.id.weight_minus     -> decreaseWeight()
-            R.id.age_add          -> increaseAge()
-            R.id.age_minus        -> decreaseAge()
-            R.id.calculate_button ->
-            {
+            R.id.weight_add -> increaseWeight()
+            R.id.weight_minus -> decreaseWeight()
+            R.id.age_add -> increaseAge()
+            R.id.age_minus -> decreaseAge()
+            R.id.calculate_button -> {
+
                 val intent: Intent = Intent(applicationContext, ResultActivity::class.java)
                 intent.putExtra(IS_MAN_EXTRA, isMale)
                 intent.putExtra(HEIGHT_EXTRA, height)
@@ -181,7 +190,6 @@ class MainActivity : AppCompatActivity() , View.OnClickListener
 
             }
         }
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -197,6 +205,19 @@ class MainActivity : AppCompatActivity() , View.OnClickListener
         }
 
         return super.onOptionsItemSelected(item)
+    }
+
+    //play what sound we want
+    private fun manageSound(rawPath: Int)
+    {
+        var mediaPlayer: MediaPlayer?
+        mediaPlayer = MediaPlayer.create(applicationContext, rawPath)
+        mediaPlayer.setOnCompletionListener { mp ->
+            mp.reset()
+            mp.release()
+            mediaPlayer = null
+        }
+        mediaPlayer?.start()
     }
 
     private fun viewFinder()

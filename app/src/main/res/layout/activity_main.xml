@@ -116,7 +116,7 @@
 
                     <TextView
                         style="@style/parameter_textview"
-                        android:text="CM" />
+                        android:text="cm"/>
 
                 </LinearLayout>
 
