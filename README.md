@@ -1,5 +1,4 @@
 # Kotlin-Bmi-App
-# Fal_Hafez
 
 1 | 2 | 3
 :-------------------------:|:-------------------------:|:-------------------------:
@@ -17,4 +16,5 @@
 This is a useful Persian app that calculates body mass index (BMI).
 ## used library
 Image Radio Button
+
 Custom Seekbar
