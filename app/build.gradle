@@ -9,7 +9,7 @@ android {
     buildToolsVersion "31.0.0"
 
     defaultConfig {
-        applicationId "com.example.kotlincalculaterapp"
+        applicationId "com.example.kotlinbmiapp"
         minSdkVersion 23
         targetSdkVersion 31
         versionCode 1
