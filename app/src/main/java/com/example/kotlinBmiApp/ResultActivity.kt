@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.Paint
 import android.os.Bundle
 import android.text.method.LinkMovementMethod
+import android.util.Log
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -14,11 +15,11 @@ class ResultActivity : AppCompatActivity() {
 
     var height   = 0.0
     var weight   = 0
-    var isMan    = false
     var age      = 0
     var bmi      = 0.0
     var lowBmi   = 0
     var highBmi  = 0
+    var isMan: Boolean? = null
 
     lateinit var textViewBmi: TextView
     lateinit var textViewStatus: TextView
@@ -39,6 +40,7 @@ class ResultActivity : AppCompatActivity() {
         isMan  = intent.getBooleanExtra(MainActivity.IS_MAN_EXTRA, false)
         age    = intent.getIntExtra(MainActivity.AGE_EXTRA, 0)
 
+        Log.d("isMan" , isMan.toString())
         //calculate Bmi
         bmi = calculateBmi().roundDecimal(1)
 
@@ -48,10 +50,10 @@ class ResultActivity : AppCompatActivity() {
         /* set Status to textView
         Because this index is based on the women index and
         the healthy bmi of men is one unit more than women, we subtract the bmi of men minus one */
-        textViewStatus.text = calculateBmiRes(if (isMan) bmi - 1 else bmi)
+        textViewStatus.text = calculateBmiRes(if (isMan!!) bmi - 1 else bmi)
 
         /* The healthy range is 19 to 24 for women and 20 to 25 for men */
-        if (isMan)
+        if (isMan!!)
         {
             lowBmi = 20
             highBmi = 25

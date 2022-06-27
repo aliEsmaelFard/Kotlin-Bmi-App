@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() , View.OnClickListener
     var weight = 60
     var height: Double = 170.0
     var bmi = 0.0
-    var isMale = false
+    var isMale: Boolean? = null
     var lowBmi = 0
     var highBmi = 0
     var age = 25
@@ -70,8 +70,10 @@ class MainActivity : AppCompatActivity() , View.OnClickListener
                 checkedId: Int
             ) {
                 manageSound(R.raw.radio_sound)
-                if (R.id.male == checkedId)
+                if (R.id.male == checkedId) {
                     isMale = true
+                }
+                else  isMale = false
             }
         })
 
@@ -179,6 +181,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener
             R.id.weight_minus -> decreaseWeight()
             R.id.age_add -> increaseAge()
             R.id.age_minus -> decreaseAge()
+
+            //calculate button
             R.id.calculate_button -> {
 
                 val intent: Intent = Intent(applicationContext, ResultActivity::class.java)
